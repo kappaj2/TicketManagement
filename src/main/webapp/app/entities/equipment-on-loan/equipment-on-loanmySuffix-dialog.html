@@ -1,0 +1,158 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEquipmentOnLoanLabel" data-translate="ticketManagementApp.equipmentOnLoan.home.createOrEditLabel">Create or edit a Equipment On Loan</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.equipmentOnLoan.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.equipmentOnLoan.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ticketManagementApp.equipmentOnLoan.equipmentOnLoanEntryId" for="field_equipmentOnLoanEntryId">Equipment On Loan Entry Id</label>
+            <input type="number" class="form-control" name="equipmentOnLoanEntryId" id="field_equipmentOnLoanEntryId"
+                    ng-model="vm.equipmentOnLoan.equipmentOnLoanEntryId"
+                    required />
+            <div ng-show="editForm.equipmentOnLoanEntryId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.equipmentOnLoanEntryId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.equipmentOnLoanEntryId.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ticketManagementApp.equipmentOnLoan.tenantId" for="field_tenantId">Tenant Id</label>
+            <input type="number" class="form-control" name="tenantId" id="field_tenantId"
+                    ng-model="vm.equipmentOnLoan.tenantId"
+                    required />
+            <div ng-show="editForm.tenantId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.tenantId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.tenantId.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ticketManagementApp.equipmentOnLoan.equipmentId" for="field_equipmentId">Equipment Id</label>
+            <input type="number" class="form-control" name="equipmentId" id="field_equipmentId"
+                    ng-model="vm.equipmentOnLoan.equipmentId"
+                    required />
+            <div ng-show="editForm.equipmentId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.equipmentId.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.equipmentId.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ticketManagementApp.equipmentOnLoan.dateBookedOut" for="field_dateBookedOut">Date Booked Out</label>
+                <div class="input-group">
+                    <input id="field_dateBookedOut" type="text" class="form-control" name="dateBookedOut" datetime-picker="{{dateformat}}" ng-model="vm.equipmentOnLoan.dateBookedOut" is-open="vm.datePickerOpenStatus.dateBookedOut"
+                    required  />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateBookedOut')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.dateBookedOut.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dateBookedOut.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.dateBookedOut.$error.ZonedDateTimelocal" data-translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ticketManagementApp.equipmentOnLoan.dateInstalledAtTenant" for="field_dateInstalledAtTenant">Date Installed At Tenant</label>
+                <div class="input-group">
+                    <input id="field_dateInstalledAtTenant" type="text" class="form-control" name="dateInstalledAtTenant" datetime-picker="{{dateformat}}" ng-model="vm.equipmentOnLoan.dateInstalledAtTenant" is-open="vm.datePickerOpenStatus.dateInstalledAtTenant"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateInstalledAtTenant')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ticketManagementApp.equipmentOnLoan.bookOutTechnitian" for="field_bookOutTechnitian">Book Out Technitian</label>
+            <input type="number" class="form-control" name="bookOutTechnitian" id="field_bookOutTechnitian"
+                    ng-model="vm.equipmentOnLoan.bookOutTechnitian"
+                    required />
+            <div ng-show="editForm.bookOutTechnitian.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.bookOutTechnitian.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.bookOutTechnitian.$error.number" data-translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ticketManagementApp.equipmentOnLoan.dateRemovedFromTenant" for="field_dateRemovedFromTenant">Date Removed From Tenant</label>
+                <div class="input-group">
+                    <input id="field_dateRemovedFromTenant" type="text" class="form-control" name="dateRemovedFromTenant" datetime-picker="{{dateformat}}" ng-model="vm.equipmentOnLoan.dateRemovedFromTenant" is-open="vm.datePickerOpenStatus.dateRemovedFromTenant"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateRemovedFromTenant')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ticketManagementApp.equipmentOnLoan.installationTechnitian" for="field_installationTechnitian">Installation Technitian</label>
+            <input type="number" class="form-control" name="installationTechnitian" id="field_installationTechnitian"
+                    ng-model="vm.equipmentOnLoan.installationTechnitian"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ticketManagementApp.equipmentOnLoan.removalTechnitian" for="field_removalTechnitian">Removal Technitian</label>
+            <input type="number" class="form-control" name="removalTechnitian" id="field_removalTechnitian"
+                    ng-model="vm.equipmentOnLoan.removalTechnitian"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ticketManagementApp.equipmentOnLoan.dateBookedBackIn" for="field_dateBookedBackIn">Date Booked Back In</label>
+                <div class="input-group">
+                    <input id="field_dateBookedBackIn" type="text" class="form-control" name="dateBookedBackIn" datetime-picker="{{dateformat}}" ng-model="vm.equipmentOnLoan.dateBookedBackIn" is-open="vm.datePickerOpenStatus.dateBookedBackIn"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateBookedBackIn')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="ticketManagementApp.equipmentOnLoan.bookInTechnitian" for="field_bookInTechnitian">Book In Technitian</label>
+            <input type="number" class="form-control" name="bookInTechnitian" id="field_bookInTechnitian"
+                    ng-model="vm.equipmentOnLoan.bookInTechnitian"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

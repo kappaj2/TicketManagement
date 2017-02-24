@@ -1,0 +1,76 @@
+<div>
+    <h2 data-translate="ticketManagementApp.equipmentOnLoan.home.title">Equipment On Loans</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="equipment-on-loanmySuffix.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="ticketManagementApp.equipmentOnLoan.home.createLabel">
+                        Create new Equipment On Loan
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.reset()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="equipmentOnLoanEntryId"><span data-translate="ticketManagementApp.equipmentOnLoan.equipmentOnLoanEntryId">Equipment On Loan Entry Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="tenantId"><span data-translate="ticketManagementApp.equipmentOnLoan.tenantId">Tenant Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="equipmentId"><span data-translate="ticketManagementApp.equipmentOnLoan.equipmentId">Equipment Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dateBookedOut"><span data-translate="ticketManagementApp.equipmentOnLoan.dateBookedOut">Date Booked Out</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dateInstalledAtTenant"><span data-translate="ticketManagementApp.equipmentOnLoan.dateInstalledAtTenant">Date Installed At Tenant</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="bookOutTechnitian"><span data-translate="ticketManagementApp.equipmentOnLoan.bookOutTechnitian">Book Out Technitian</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dateRemovedFromTenant"><span data-translate="ticketManagementApp.equipmentOnLoan.dateRemovedFromTenant">Date Removed From Tenant</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="installationTechnitian"><span data-translate="ticketManagementApp.equipmentOnLoan.installationTechnitian">Installation Technitian</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="removalTechnitian"><span data-translate="ticketManagementApp.equipmentOnLoan.removalTechnitian">Removal Technitian</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dateBookedBackIn"><span data-translate="ticketManagementApp.equipmentOnLoan.dateBookedBackIn">Date Booked Back In</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="bookInTechnitian"><span data-translate="ticketManagementApp.equipmentOnLoan.bookInTechnitian">Book In Technitian</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody infinite-scroll="vm.loadPage(vm.page + 1)" infinite-scroll-disabled="vm.page >= vm.links['last']">
+                <tr ng-repeat="equipmentOnLoan in vm.equipmentOnLoans track by equipmentOnLoan.id">
+                    <td><a ui-sref="equipment-on-loanmySuffix-detail({id:equipmentOnLoan.id})">{{equipmentOnLoan.id}}</a></td>
+                    <td>{{equipmentOnLoan.equipmentOnLoanEntryId}}</td>
+                    <td>{{equipmentOnLoan.tenantId}}</td>
+                    <td>{{equipmentOnLoan.equipmentId}}</td>
+                    <td>{{equipmentOnLoan.dateBookedOut | date:'medium'}}</td>
+                    <td>{{equipmentOnLoan.dateInstalledAtTenant | date:'medium'}}</td>
+                    <td>{{equipmentOnLoan.bookOutTechnitian}}</td>
+                    <td>{{equipmentOnLoan.dateRemovedFromTenant | date:'medium'}}</td>
+                    <td>{{equipmentOnLoan.installationTechnitian}}</td>
+                    <td>{{equipmentOnLoan.removalTechnitian}}</td>
+                    <td>{{equipmentOnLoan.dateBookedBackIn | date:'medium'}}</td>
+                    <td>{{equipmentOnLoan.bookInTechnitian}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="equipment-on-loanmySuffix-detail({id:equipmentOnLoan.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="equipment-on-loanmySuffix.edit({id:equipmentOnLoan.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="equipment-on-loanmySuffix.delete({id:equipmentOnLoan.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

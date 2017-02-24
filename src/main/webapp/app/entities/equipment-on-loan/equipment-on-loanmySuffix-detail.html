@@ -1,0 +1,63 @@
+
+<div>
+    <h2><span data-translate="ticketManagementApp.equipmentOnLoan.detail.title">Equipment On Loan</span> {{vm.equipmentOnLoan.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ticketManagementApp.equipmentOnLoan.equipmentOnLoanEntryId">Equipment On Loan Entry Id</span></dt>
+        <dd>
+            <span>{{vm.equipmentOnLoan.equipmentOnLoanEntryId}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.equipmentOnLoan.tenantId">Tenant Id</span></dt>
+        <dd>
+            <span>{{vm.equipmentOnLoan.tenantId}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.equipmentOnLoan.equipmentId">Equipment Id</span></dt>
+        <dd>
+            <span>{{vm.equipmentOnLoan.equipmentId}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.equipmentOnLoan.dateBookedOut">Date Booked Out</span></dt>
+        <dd>
+            <span>{{vm.equipmentOnLoan.dateBookedOut | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.equipmentOnLoan.dateInstalledAtTenant">Date Installed At Tenant</span></dt>
+        <dd>
+            <span>{{vm.equipmentOnLoan.dateInstalledAtTenant | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.equipmentOnLoan.bookOutTechnitian">Book Out Technitian</span></dt>
+        <dd>
+            <span>{{vm.equipmentOnLoan.bookOutTechnitian}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.equipmentOnLoan.dateRemovedFromTenant">Date Removed From Tenant</span></dt>
+        <dd>
+            <span>{{vm.equipmentOnLoan.dateRemovedFromTenant | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.equipmentOnLoan.installationTechnitian">Installation Technitian</span></dt>
+        <dd>
+            <span>{{vm.equipmentOnLoan.installationTechnitian}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.equipmentOnLoan.removalTechnitian">Removal Technitian</span></dt>
+        <dd>
+            <span>{{vm.equipmentOnLoan.removalTechnitian}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.equipmentOnLoan.dateBookedBackIn">Date Booked Back In</span></dt>
+        <dd>
+            <span>{{vm.equipmentOnLoan.dateBookedBackIn | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.equipmentOnLoan.bookInTechnitian">Book In Technitian</span></dt>
+        <dd>
+            <span>{{vm.equipmentOnLoan.bookInTechnitian}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="equipment-on-loanmySuffix-detail.edit({id:vm.equipmentOnLoan.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

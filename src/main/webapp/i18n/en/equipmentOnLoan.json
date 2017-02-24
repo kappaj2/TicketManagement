@@ -1,0 +1,32 @@
+{
+    "ticketManagementApp": {
+        "equipmentOnLoan" : {
+            "home": {
+                "title": "Equipment On Loans",
+                "createLabel": "Create a new Equipment On Loan",
+                "createOrEditLabel": "Create or edit a Equipment On Loan",
+                "search": "Search for Equipment On Loan"
+            },
+            "created": "A new Equipment On Loan is created with identifier {{ param }}",
+            "updated": "A Equipment On Loan is updated with identifier {{ param }}",
+            "deleted": "A Equipment On Loan is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Equipment On Loan {{ id }}?"
+            },
+            "detail": {
+                "title": "Equipment On Loan"
+            },
+            "equipmentOnLoanEntryId": "Equipment On Loan Entry Id",
+            "tenantId": "Tenant Id",
+            "equipmentId": "Equipment Id",
+            "dateBookedOut": "Date Booked Out",
+            "dateInstalledAtTenant": "Date Installed At Tenant",
+            "bookOutTechnitian": "Book Out Technitian",
+            "dateRemovedFromTenant": "Date Removed From Tenant",
+            "installationTechnitian": "Installation Technitian",
+            "removalTechnitian": "Removal Technitian",
+            "dateBookedBackIn": "Date Booked Back In",
+            "bookInTechnitian": "Book In Technitian"
+        }
+    }
+}

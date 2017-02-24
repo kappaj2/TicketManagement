@@ -1,0 +1,71 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "equipmentOnLoanEntryId",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "tenantId",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "equipmentId",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dateBookedOut",
+            "fieldType": "ZonedDateTime",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dateInstalledAtTenant",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "bookOutTechnitian",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "dateRemovedFromTenant",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "installationTechnitian",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "removalTechnitian",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dateBookedBackIn",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "bookInTechnitian",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170122104429",
+    "entityTableName": "equipment_on_loan",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "angularJSSuffix": "mySuffix"
+}

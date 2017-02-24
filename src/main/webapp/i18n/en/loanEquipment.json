@@ -1,0 +1,27 @@
+{
+    "ticketManagementApp": {
+        "loanEquipment" : {
+            "home": {
+                "title": "Loan Equipments",
+                "createLabel": "Create a new Loan Equipment",
+                "createOrEditLabel": "Create or edit a Loan Equipment",
+                "search": "Search for Loan Equipment"
+            },
+            "created": "A new Loan Equipment is created with identifier {{ param }}",
+            "updated": "A Loan Equipment is updated with identifier {{ param }}",
+            "deleted": "A Loan Equipment is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Loan Equipment {{ id }}?"
+            },
+            "detail": {
+                "title": "Loan Equipment"
+            },
+            "equipmentId": "Equipment Id",
+            "equipmentName": "Equipment Name",
+            "equipmentDescription": "Equipment Description",
+            "initialUploadDate": "Initial Upload Date",
+            "uploadedBy": "Uploaded By",
+            "equipmentActive": "Equipment Active"
+        }
+    }
+}

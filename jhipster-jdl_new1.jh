@@ -1,0 +1,48 @@
+
+entity Tenant {
+ 	tenantId Integer required,
+    tenantName String required,
+    creationDate ZonedDateTime required,
+    dateCeased ZonedDateTime
+}
+
+entity LoanEquipment{
+	equipmentId Integer required ,
+    equipmentName String required,
+    equipmentDescription String required,
+    initialUploadDate ZonedDateTime required,
+    uploadedBy Integer required,
+    equipmentActive Boolean required
+}
+
+entity EquipmentOnLoan{
+	equipmentOnLoanEntryId Integer required, 
+	tenantId Integer required,
+    equipmentId Integer required,
+    dateBookedOut ZonedDateTime required,
+    dateInstalledAtTenant ZonedDateTime,
+    bookOutTechnitian Integer required,
+    dateRemovedFromTenant ZonedDateTime,
+    installationTechnitian Integer,
+    removalTechnitian Integer,
+    dateBookedBackIn ZonedDateTime,
+    bookInTechnitian Integer
+}
+
+
+
+enum Language {
+    FRENCH, ENGLISH, SPANISH
+}
+
+
+// Set pagination options
+paginate Tenant, EquipmentOnLoan with infinite-scroll
+paginate LoanEquipment with pagination
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl 
+// Set an angular suffix
+angularSuffix * with mySuffix

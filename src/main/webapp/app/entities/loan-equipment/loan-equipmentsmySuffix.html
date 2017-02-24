@@ -1,0 +1,70 @@
+<div>
+    <h2 data-translate="ticketManagementApp.loanEquipment.home.title">Loan Equipments</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="loan-equipmentmySuffix.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span  data-translate="ticketManagementApp.loanEquipment.home.createLabel">
+                        Create new Loan Equipment
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="equipmentId"><span data-translate="ticketManagementApp.loanEquipment.equipmentId">Equipment Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="equipmentName"><span data-translate="ticketManagementApp.loanEquipment.equipmentName">Equipment Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="equipmentDescription"><span data-translate="ticketManagementApp.loanEquipment.equipmentDescription">Equipment Description</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="initialUploadDate"><span data-translate="ticketManagementApp.loanEquipment.initialUploadDate">Initial Upload Date</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="uploadedBy"><span data-translate="ticketManagementApp.loanEquipment.uploadedBy">Uploaded By</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="equipmentActive"><span data-translate="ticketManagementApp.loanEquipment.equipmentActive">Equipment Active</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="loanEquipment in vm.loanEquipments track by loanEquipment.id">
+                    <td><a ui-sref="loan-equipmentmySuffix-detail({id:loanEquipment.id})">{{loanEquipment.id}}</a></td>
+                    <td>{{loanEquipment.equipmentId}}</td>
+                    <td>{{loanEquipment.equipmentName}}</td>
+                    <td>{{loanEquipment.equipmentDescription}}</td>
+                    <td>{{loanEquipment.initialUploadDate | date:'medium'}}</td>
+                    <td>{{loanEquipment.uploadedBy}}</td>
+                    <td>{{loanEquipment.equipmentActive}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="loan-equipmentmySuffix-detail({id:loanEquipment.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="loan-equipmentmySuffix.edit({id:loanEquipment.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="loan-equipmentmySuffix.delete({id:loanEquipment.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" data-translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount" items-per-page="vm.itemsPerPage"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" items-per-page="vm.itemsPerPage" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

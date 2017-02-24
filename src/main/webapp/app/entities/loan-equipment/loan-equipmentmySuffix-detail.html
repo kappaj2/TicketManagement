@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span data-translate="ticketManagementApp.loanEquipment.detail.title">Loan Equipment</span> {{vm.loanEquipment.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ticketManagementApp.loanEquipment.equipmentId">Equipment Id</span></dt>
+        <dd>
+            <span>{{vm.loanEquipment.equipmentId}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.loanEquipment.equipmentName">Equipment Name</span></dt>
+        <dd>
+            <span>{{vm.loanEquipment.equipmentName}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.loanEquipment.equipmentDescription">Equipment Description</span></dt>
+        <dd>
+            <span>{{vm.loanEquipment.equipmentDescription}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.loanEquipment.initialUploadDate">Initial Upload Date</span></dt>
+        <dd>
+            <span>{{vm.loanEquipment.initialUploadDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.loanEquipment.uploadedBy">Uploaded By</span></dt>
+        <dd>
+            <span>{{vm.loanEquipment.uploadedBy}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.loanEquipment.equipmentActive">Equipment Active</span></dt>
+        <dd>
+            <span>{{vm.loanEquipment.equipmentActive}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="loan-equipmentmySuffix-detail.edit({id:vm.loanEquipment.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="ticketManagementApp.tenant.detail.title">Tenant</span> {{vm.tenant.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span data-translate="ticketManagementApp.tenant.tenantId">Tenant Id</span></dt>
+        <dd>
+            <span>{{vm.tenant.tenantId}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.tenant.tenantName">Tenant Name</span></dt>
+        <dd>
+            <span>{{vm.tenant.tenantName}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.tenant.creationDate">Creation Date</span></dt>
+        <dd>
+            <span>{{vm.tenant.creationDate | date:'medium'}}</span>
+        </dd>
+        <dt><span data-translate="ticketManagementApp.tenant.dateCeased">Date Ceased</span></dt>
+        <dd>
+            <span>{{vm.tenant.dateCeased | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="tenantmySuffix-detail.edit({id:vm.tenant.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>
